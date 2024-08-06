@@ -1,0 +1,46 @@
+{
+  "employees": [
+    {
+      "id": "101",
+      "empName": "Barath",
+      "empSalary": "5000",
+      "empDate": "2024-08-01"
+    },
+    {
+      "id": "102",
+      "empName": "Kavin",
+      "empSalary": "4500",
+      "empDate": "2024-08-02"
+    },
+    {
+      "id": "103",
+      "empName": "Yuva",
+      "empSalary": "3500",
+      "empDate": "2024-08-02"
+    },
+    {
+      "id": "104",
+      "empName": "Prakesh",
+      "empSalary": "3500",
+      "empDate": "2024-08-01"
+    },
+    {
+      "id": "105",
+      "empName": "Kiruthik",
+      "empSalary": "6000",
+      "empDate": "2024-08-01"
+    },
+    {
+      "id": "106",
+      "empName": "Vijay",
+      "empSalary": "5000",
+      "empDate": "2024-08-02"
+    },
+    {
+      "id": "107",
+      "empName": "Bharath",
+      "empSalary": "1500",
+      "empDate": "2024-08-01"
+    }
+  ]
+}

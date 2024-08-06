@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    </head>
+
+    <body style="background-image: url('https://plus.unsplash.com/premium_photo-1692546058534-cfe9088df103?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2F0ZXIlMjBtYW5hZ2VtZW50fGVufDB8fDB8fHww'); background-repeat: no-repeat; background-size: cover; background-position: center; opacity: 1;">
+
+      <div class="container border-0 col-lg-6 mt-5" style="background-color: rgb(146, 145, 145);">
+        <h1 class="">Apartment Water Management System</h1>
+        <hr>
+            <div class="row justify-content-center" style="background-color: rgb(146, 145, 145);">
+                <div class="col-md-8 mt-4 mb-4">
+                             <form #myForm="ngForm">
+                                <div class="form-group">
+                                    <label for="Employee Id">
+                                        Flat Owner Id
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           name="empId" 
+                                           #empId="ngModel" ngModel
+                                           required
+                                           pattern="[0-9]+"
+                                           
+                                            />   
+                                </div>
+                                <div *ngIf="empId.touched">
+                                  <div *ngIf="empId.errors?.['required']">
+                                    <b style="color: red;">Flat Owner Id Required</b>
+                                  </div>
+                                  <div *ngIf="empId.errors?.['pattern']">
+                                    <b>Invalid Flat Owner Id</b>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Employee Name">
+                                        Flat Owner Name
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           name="empName" 
+                                           #empName="ngModel" ngModel
+                                           required
+                                           pattern="[a-zA-Z]+"
+                        
+                                            />
+                    
+                                </div>
+                                <div *ngIf="empName.touched">
+                                  <div *ngIf="empName.errors?.['required']">
+                                    <b style="color: red;">Flat Owner Name  Required</b>
+                                  </div>
+                                  <div *ngIf="empName.errors?.['pattern']">
+                                    <b>Invalid Flat Owner Name</b>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Employee Salary">
+                                        Bill Amount
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           name="empSalary" 
+                                           #empSalary="ngModel" ngModel
+                                           required
+                                           pattern="[0-9]+"
+                                           />
+
+                                </div>
+                                <div *ngIf="empSalary.touched">
+                                  <div *ngIf="empSalary.errors?.['required']">
+                                    <b style="color: red;">Bill Amount Required</b>
+                                  </div>
+                                  <div *ngIf="empSalary.errors?.['pattern']">
+                                    <b>Invalid Bill Amount</b>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="Employee Date">
+                                    Billing Date
+                                  </label>
+                                  <input type="date" 
+                                         class="form-control" 
+                                         name="empDate" 
+                                         #empDate="ngModel" ngModel
+                                         />
+
+                              </div>
+                             
+
+                                <div class="col-lg-16 mt-4">                        
+                                  <button class="btn btn-success" (click)="insertEmployee(myForm.value)">
+                                    Insert 
+                                </button>
+                                 &nbsp;
+                                <button class="btn btn-primary" (click)="updateEmployee(myForm.value)"  >
+                                    Update 
+                                </button>&nbsp;
+                                <button class="btn btn-danger" (click)="deleteEmployee(myForm.value)">
+                                    Delete 
+                                </button>&nbsp;
+                                <button class="btn btn-warning" (click)="findEmployee(myForm.value)">
+                                    Find 
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" (click)="findAllEmployee()">
+                                    Find All
+                                </button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+         <br>
+         <h3>{{result}}</h3>
+         <div style="width: 100%; background-color:gray; text-align: center;" *ngIf="flag">
+          <table width="80%" align="center" class="table table-borderd">
+           <tr style="color:brown"><th><h4>Employee Id</h4></th><th><h4>Employee Name</h4></th><th><h4>Employee Salary</h4></th></tr> 
+            <tr *ngFor="let emp of employeeArr" style="text-align: center;">
+                <td> {{emp.id}} </td><td> {{emp.empName}} </td><td> {{emp.empSalary}} </td>
+            </tr>
+         </table>
+         </div>
+    </body>
+</html>
+
